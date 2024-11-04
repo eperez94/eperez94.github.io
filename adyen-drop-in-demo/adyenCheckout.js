@@ -37,7 +37,7 @@ const configuration = {
 // Step 2: Define Drop-in configuration
 const dropinConfiguration = {
   // Required if you import individual payment methods.
-  paymentMethodComponents: [Card, PayPal, GooglePay, ApplePay, Ideal],
+  paymentMethodComponents: [PayPal, GooglePay, ApplePay, Ideal],
   
   // Drop-in configuration only has properties and events related to itself. Drop-in configuration cannot contain global configuration.
   onReady: () => {
