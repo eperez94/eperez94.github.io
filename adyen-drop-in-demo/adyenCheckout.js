@@ -10,8 +10,33 @@ const configuration = {
     value: 1000, // Amount in minor units (e.g., 1000 = 10.00 EUR)
     currency: 'EUR'
   },
-  locale: 'nl-NL',
-  countryCode: 'NL',
+  locale: 'en_US',
+  countryCode: 'US',
+  showPayButton: true,
+
+  // Configure individual payment methods
+  paymentMethodsConfiguration: {
+    ideal: {
+      showImage: true
+    },
+    card: {
+      hasHolderName: true,
+      holderNameRequired: true,
+      name: "Credit or debit card",
+      amount: {
+        value: 10000, // Amount in minor units (e.g., 10000 = 100.00 EUR)
+        currency: "EUR"
+      }
+    },
+    paypal: {
+      amount: {
+        value: 10000, // Amount in minor units (e.g., 10000 = 100.00 USD)
+        currency: "USD"
+      },
+      environment: "test",
+      countryCode: "US"
+    }
+  },
 
   // Event handler for successful payment completion with manual messaging (no backend setup for demo)
   onPaymentCompleted: (result, component) => {
@@ -21,11 +46,6 @@ const configuration = {
       result.resultCode === "Refused" ? "Payment Refused. Please try again." :
       "Payment status: " + result.resultCode;
     alert(message);
-  },
-
-  // Event handler for failed payment with manual message (no backend setup for demo)
-  onPaymentFailed: (result, component) => {
-    alert("Payment failed. Please try again.");
   },
 
   // Global error handler for unexpected issues with manual message (no backend setup for demo)
@@ -62,8 +82,8 @@ async function initializeAdyenCheckout() {
     // Create an instance of AdyenCheckout with the global configuration, to pass when you create an instance of Drop-in.
     const checkout = await AdyenCheckout(configuration);
 
-    // Create and mount Drop-in with the Drop-in configuration
-    const dropin = checkout.create("dropin", dropinConfiguration);
+    // Create and mount Drop-in without specifying individual components
+    const dropin = checkout.create("dropin");
     dropin.mount("#dropin-container");
   } catch (error) {
     console.error("Failed to initialize AdyenCheckout:", error);
