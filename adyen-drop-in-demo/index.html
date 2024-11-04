@@ -47,11 +47,12 @@
       margin-bottom: 20px;
     }
 
-    .cart-summary {
+    .cart-summary, .offer-card {
       background-color: #f9f9f9;
       padding: 10px;
       border: 1px solid #ddd;
       border-radius: 4px;
+      margin-bottom: 20px;
     }
 
     .cart-item {
@@ -80,6 +81,19 @@
     .btn-primary:hover {
       background-color: #218838;
     }
+
+    .offer-card h1, .offer-card h3, .offer-card p {
+      margin: 0;
+    }
+
+    .offer-card a {
+      color: #1db954;
+      text-decoration: none;
+    }
+
+    .offer-card a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
@@ -87,24 +101,80 @@
     <h2>Checkout</h2>
     
     <!-- Cart Summary Section -->
-    <div class="section">
+    <div class="section cart-summary">
       <h3>Cart Summary</h3>
-      <div class="cart-summary">
-        <div class="cart-item">
-          <span>Product 1</span>
-          <span>$25.00</span>
-        </div>
-        <div class="cart-item">
-          <span>Product 2</span>
-          <span>$15.00</span>
-        </div>
-        <div class="cart-item">
-          <span>Shipping</span>
-          <span>$5.00</span>
-        </div>
-        <div class="total">Total: $45.00</div>
+      <div class="cart-item">
+        <span>Product 1</span>
+        <span>$25.00</span>
       </div>
+      <div class="cart-item">
+        <span>Product 2</span>
+        <span>$15.00</span>
+      </div>
+      <div class="cart-item">
+        <span>Shipping</span>
+        <span>$5.00</span>
+      </div>
+      <div class="total">Total: $45.00</div>
     </div>
+
+    <!-- Offer Plan Section -->
+    <section class="section offer-card OfferCardV2__OfferCardBackground-sc-1uxgtui-0 ineLKm">
+      <div class="OfferCardV2__Container-sc-1uxgtui-1 iuIhsb">
+        <div class="OfferCardV2__AboveCard-sc-1uxgtui-2 iRoEvL">
+          <span class="encore-text encore-text-title-small OfferCardV2__YourPlanLabel-sc-1uxgtui-3 dRqJeR">
+            Your plan
+          </span>
+          <a href="/us/premium/?checkout-offer=recurring_premium_audiobooks-full&amp;ref=checkout#plans" class="Link-sc-k8gsk-0 jVkpyL">
+            <span class="encore-text encore-text-body-small OfferCardV2__ChangePlansLinkText-sc-1uxgtui-4 iUSBXZ">
+              Change plan
+            </span>
+          </a>
+        </div>
+        <article class="OfferCardV2__Card-sc-1uxgtui-5 exQOYa">
+          <div class="OfferCardV2__OfferCardHeader-sc-1uxgtui-6 fUTbLQ">
+            <h1 class="encore-text encore-text-body-medium-bold OfferCardV2__Title-sc-1uxgtui-8 hcyFaW">
+              Premium Individual
+            </h1>
+            <h3 class="encore-text encore-text-marginal OfferCardV2__SubTitle-sc-1uxgtui-9 jCjyBL">
+              1 Premium account
+            </h3>
+          </div>
+          <div class="OfferCardV2__OfferCardBody-sc-1uxgtui-7 jkOfPd">
+            <div class="OfferCardV2__OfferCardLine-sc-1uxgtui-12 jXHEGh">
+              <p class="encore-text encore-text-body-small-bold OfferCardV2__OfferCardLineContent-sc-1uxgtui-13 iRCRty">
+                Total</p>
+              <p class="encore-text encore-text-body-small-bold OfferCardV2__OfferCardLineContent-sc-1uxgtui-13 iRCRty">
+                $11.99 + tax / month
+              </p>
+            </div>
+            <div class="OfferCardV2__OfferCardLine-sc-1uxgtui-12 jXHEGh">
+              <p class="encore-text encore-text-body-small-bold OfferCardV2__OfferCardLineContent-sc-1uxgtui-13 iRCRty">
+                Next Billing Date</p>
+              <p class="encore-text encore-text-body-small-bold OfferCardV2__OfferCardLineContent-sc-1uxgtui-13 iRCRty">
+                Nov 30, 2024
+              </p>
+            </div>
+            <ul class="TypeList__TypeListElement-sc-1jhixr6-0 ljsspJ OfferCardV2__OfferCardList-sc-1uxgtui-15 fPjNSV">
+              <li>
+                <p class="encore-text encore-text-marginal OfferCardV2__ListItemContent-sc-1uxgtui-14 cgrpjd">
+                  You will next be billed on Nov 30, 2024
+                </p>
+              </li>
+              <li>
+                <p class="encore-text encore-text-marginal OfferCardV2__ListItemContent-sc-1uxgtui-14 cgrpjd">
+                  Cancel anytime. 
+                  <a href="https://www.spotify.com/legal/paid-subscription-terms/" target="_blank" rel="noopener" class="Link-sc-k8gsk-0 jVkpyL">
+                    Offer terms
+                  </a> 
+                  apply.
+                </p>
+              </li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
 
     <!-- Billing & Shipping Information Section -->
     <div class="section">
@@ -160,59 +230,5 @@
     <!-- Submit Button -->
     <button type="submit" class="btn-primary">Complete Purchase</button>
   </div>
-  <section class="OfferCardV2__OfferCardBackground-sc-1uxgtui-0 ineLKm">
-    <div class="OfferCardV2__Container-sc-1uxgtui-1 iuIhsb">
-      <div class="OfferCardV2__AboveCard-sc-1uxgtui-2 iRoEvL">
-        <span class="encore-text encore-text-title-small OfferCardV2__YourPlanLabel-sc-1uxgtui-3 dRqJeR" data-encore-id="text">
-          Your plan
-        </span>
-        <a href="/us/premium/?checkout-offer=recurring_premium_audiobooks-full&amp;ref=checkout#plans" data-encore-id="textLink" class="Link-sc-k8gsk-0 jVkpyL"><span class="encore-text encore-text-body-small OfferCardV2__ChangePlansLinkText-sc-1uxgtui-4 iUSBXZ" data-encore-id="text">
-          Change plan
-        </span>
-        </a>
-      </div>
-      <article class="OfferCardV2__Card-sc-1uxgtui-5 exQOYa">
-        <div class="OfferCardV2__OfferCardHeader-sc-1uxgtui-6 fUTbLQ">
-          <div><h1 class="encore-text encore-text-body-medium-bold OfferCardV2__Title-sc-1uxgtui-8 hcyFaW" data-encore-id="text">
-            Premium Individual
-          </h1>
-            <h3 class="encore-text encore-text-marginal OfferCardV2__SubTitle-sc-1uxgtui-9 jCjyBL" data-encore-id="text">
-              1 Premium account
-            </h3>
-          </div>
-        </div>
-        <div class="OfferCardV2__OfferCardBody-sc-1uxgtui-7 jkOfPd">
-          <div class="OfferCardV2__OfferCardLine-sc-1uxgtui-12 jXHEGh">
-            <p class="encore-text encore-text-body-small-bold OfferCardV2__OfferCardLineContent-sc-1uxgtui-13 iRCRty" data-encore-id="text">
-              Total</p><p class="encore-text encore-text-body-small-bold OfferCardV2__OfferCardLineContent-sc-1uxgtui-13 iRCRty" data-encore-id="text">
-                $11.99 + tax / month
-              </p>
-          </div>
-          <div class="OfferCardV2__OfferCardLine-sc-1uxgtui-12 jXHEGh">
-            <p class="encore-text encore-text-body-small-bold OfferCardV2__OfferCardLineContent-sc-1uxgtui-13 iRCRty" data-encore-id="text">
-              Next Billing Date</p><p class="encore-text encore-text-body-small-bold OfferCardV2__OfferCardLineContent-sc-1uxgtui-13 iRCRty" data-encore-id="text">
-                Nov 30, 2024
-              </p>
-          </div>
-          <ul role="list" class="TypeList__TypeListElement-sc-1jhixr6-0 ljsspJ OfferCardV2__OfferCardList-sc-1uxgtui-15 fPjNSV" data-encore-id="typeList">
-            <li>
-              <p class="encore-text encore-text-marginal OfferCardV2__ListItemContent-sc-1uxgtui-14 cgrpjd" data-encore-id="text">
-                You will next be billed on Nov 30, 2024
-              </p>
-            </li>
-            <li>
-              <p class="encore-text encore-text-marginal OfferCardV2__ListItemContent-sc-1uxgtui-14 cgrpjd" data-encore-id="text">
-                Cancel anytime. 
-                <a href="https://www.spotify.com/legal/paid-subscription-terms/" target="_blank" rel="noopener" data-encore-id="textLink" class="Link-sc-k8gsk-0 jVkpyL">
-                  Offer terms
-                </a> 
-                apply.
-              </p>
-            </li>
-          </ul>
-        </div>
-      </article>
-    </div>
-  </section>
 </body>
 </html>
