@@ -3,20 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adyen Checkout Demo</title>
 
   <!-- Embed the Adyen Web script element above any other JavaScript in your checkout page. -->
-  <script src="https://checkoutshopper-test.cdn.adyen.com/checkoutshopper/sdk/6.5.0/adyen.js"
+	<script src="https://checkoutshopper-live.cdn.adyen.com/checkoutshopper/sdk/6.5.0/adyen.js"
      integrity="sha384-XS7xTa1zeFadKWQceyCI+If+qgqSpiE2z7fnFJyznti1yloAmaxHFUkf3K8/Av0+"
-     crossorigin="anonymous">
-     </script>
+     crossorigin="anonymous"></script>
 
   <!-- Embed the Adyen Web stylesheet. You can add your own styling by overriding the rules in the CSS file -->
-  <link rel="stylesheet"
-     href="https://checkoutshopper-test.cdn.adyen.com/checkoutshopper/sdk/6.5.0/adyen.css"
+	<link rel="stylesheet"
+     href="https://checkoutshopper-live.cdn.adyen.com/checkoutshopper/sdk/6.5.0/adyen.css"
      integrity="sha384-uufhzWG2RuRQO7+XOvcalWqc1tuu9jdTMeO5nMwXTHB1p/EJuxTwRfhA3Q8aLEGe"
      crossorigin="anonymous">
   
-  <title>Checkout Page</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -66,26 +65,9 @@
       <!-- Drop-in Container -->
       <div id="dropin-container"></div>
     </div>
-    
-<!--     <div class="section">
-      <h3>Payment Information [Drop In Demo Here]</h3>
-      <div class="form-group">
-        <label for="card-number">Card Number</label>
-        <input type="text" id="card-number" name="card-number" required>
-      </div>
-      <div class="form-group">
-        <label for="exp-date">Expiration Date</label>
-        <input type="text" id="exp-date" name="exp-date" placeholder="MM/YY" required>
-      </div>
-      <div class="form-group">
-        <label for="cvv">CVV</label>
-        <input type="text" id="cvv" name="cvv" required>
-      </div>
-    </div> -->
 
     <!-- Complete Purchase Button -->
     <button onclick="initializeAdyenCheckout()">Complete Purchase</button>
-  </div>
 
    <!-- Custom JavaScript -->
   <script src="adyenCheckout.js"></script>
