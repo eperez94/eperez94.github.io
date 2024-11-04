@@ -27,22 +27,10 @@
       <article>
         <h1>Premium Individual</h1>
         <h3>1 Premium account</h3>
-        <div>
-          <div>
-            <p>Total: $11.99 + tax / month</p>
-          </div>
-          <div>
-            <p>Next Billing Date: Nov 30, 2024</p>
-          </div>
-          <ul>
-            <li><p>You will next be billed on Nov 30, 2024</p></li>
-            <li>
-              <p>Cancel anytime. 
-                Offer terms apply.
-              </p>
-            </li>
-          </ul>
-        </div>
+        <p>Total: $11.99 + tax / month</p>
+        <p>Next Billing Date: Nov 30, 2024</p>
+        <p>You will next be billed on Nov 30, 2024</p>
+        <p>Cancel anytime. Offer terms apply.</p>
       </article>
     </section>
 
@@ -73,7 +61,11 @@
     </div>
 
     <!-- Payment Information Section -->
-    <div id="dropin-container"></div>
+    <div class="section">
+      <h3>Payment Information</h3>
+      <!-- Drop-in Container -->
+      <div id="dropin-container"></div>
+    </div>
     
 <!--     <div class="section">
       <h3>Payment Information [Drop In Demo Here]</h3>
@@ -91,8 +83,11 @@
       </div>
     </div> -->
 
-    <!-- Submit Button -->
-    <button type="submit" class="btn-primary">Complete Purchase</button>
+    <!-- Complete Purchase Button -->
+    <button type="button" class="btn-primary" onclick="initializeAdyenCheckout()">Complete Purchase</button>
   </div>
+
+   <!-- Custom JavaScript -->
+  <script src="adyenCheckout.js"></script>
 </body>
 </html>
