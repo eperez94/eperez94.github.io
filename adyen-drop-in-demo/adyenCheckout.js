@@ -54,28 +54,6 @@ const configuration = {
   }
 };
 
-// Step 2: Define Drop-in configuration
-const dropinConfiguration = {
-  // Required if you import individual payment methods.
-  paymentMethodComponents: [PayPal, GooglePay, ApplePay, Ideal],
-  
-  // Drop-in configuration only has properties and events related to itself. Drop-in configuration cannot contain global configuration.
-  onReady: () => {
-    console.log("Drop-in is ready.");
-  },
-  instantPaymentTypes: ['applepay', 'googlepay'],
-
-  // Configuration for individual payment methods.
-  paymentMethodsConfiguration: {
-    card: {
-      // onError configuration for card payments. Overrides the global configuration.
-      onError: (error) => {
-        console.error("Card-specific error:", error);
-      }
-    }
-  }
-};
-
 // Step 3: Function to initialize AdyenCheckout and mount Drop-in
 async function initializeAdyenCheckout() {
   try {
