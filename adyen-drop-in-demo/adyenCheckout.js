@@ -1,11 +1,11 @@
 // Step 1: Define the global configuration object
 const configuration = {
   session: {
-    id: 'CSD9CAC3...', // Replace with the session ID from your backend
+    id: 'CSD9CAC34EBAE225DD', // Replace with the session ID from your backend
     sessionData: 'Ab02b4c...' // Replace with the session data from your backend
   },
   environment: 'test', // Use 'live' for the production environment
-  clientKey: 'test_870be2...', // Replace with your actual client-side key from Adyen
+  clientKey: 'test_LN74HPRZCRAX5N2Y25A7GYYU7454VV2F', // Replace with your actual client-side key from Adyen
   amount: {
     value: 1000, // Amount in minor units (e.g., 1000 = 10.00 EUR)
     currency: 'EUR'
