@@ -6,12 +6,8 @@
   <title>Adyen Checkout Demo</title>
 
   <!-- Embed Adyen Web stylesheet -->
-  <link rel="stylesheet" 
-        href="https://checkoutshopper-test.cdn.adyen.com/checkoutshopper/sdk/6.5.0/adyen.css">
-
-  <!-- Your own stylesheet -->
-  <link rel="stylesheet" href="styles.css" />
-
+  <link rel="stylesheet" href="https://checkoutshopper-test.cdn.adyen.com/checkoutshopper/sdk/6.5.0/adyen.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="container">
@@ -22,7 +18,6 @@
         <h3>1 Premium account</h3>
         <p>Total: $11.99 + tax / month</p>
         <p>Next Billing Date: Nov 30, 2024</p>
-        <p>You will next be billed on Nov 30, 2024</p>
         <p>Cancel anytime. Offer terms apply.</p>
       </article>
     </section>
@@ -54,10 +49,11 @@
     <div class="section">
       <h3>Payment Information</h3>
       <div id="app"></div>
-      <!-- Embed Adyen Web script -->
-      <script src="https://checkoutshopper-test.cdn.adyen.com/checkoutshopper/sdk/6.5.0/adyen.js"></script>
-      <!-- Custom JavaScript to initialize Adyen -->
-      <script src="adyenCheckout.js"></script>
     </div>
-  </body>
+
+    <!-- Embed the Adyen Web script -->
+    <script src="https://checkoutshopper-test.cdn.adyen.com/checkoutshopper/sdk/6.5.0/adyen.js"></script>
+    <!-- Custom JavaScript to initialize Adyen -->
+    <script src="adyenCheckout.js"></script>
+</body>
 </html>
