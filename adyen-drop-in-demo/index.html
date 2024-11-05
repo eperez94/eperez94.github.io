@@ -5,17 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Adyen Checkout Demo</title>
 
-  <!-- Embed the Adyen Web script element above any other JavaScript in your checkout page. -->
-  <script src="https://checkoutshopper-test.cdn.adyen.com/checkoutshopper/sdk/6.5.0/adyen.js"
-     integrity="sha384-XS7xTa1zeFadKWQceyCI+If+qgqSpiE2z7fnFJyznti1yloAmaxHFUkf3K8/Av0+"
-     crossorigin="anonymous"></script>
-
-  <!-- Embed the Adyen Web stylesheet. You can add your own styling by overriding the rules in the CSS file -->
-  <link rel="stylesheet"
-     href="https://checkoutshopper-test.cdn.adyen.com/checkoutshopper/sdk/6.5.0/adyen.css"
-     integrity="sha384-uufhzWG2RuRQO7+XOvcalWqc1tuu9jdTMeO5nMwXTHB1p/EJuxTwRfhA3Q8aLEGe"
-     crossorigin="anonymous">
-  
+  <!-- Your own stylesheet -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -70,12 +60,6 @@
     <button>Complete Purchase</button>
 
     <!-- Custom JavaScript -->
-    <script src="adyenCheckout.js" defer></script>
-    <script>
-      // Initialize Adyen Checkout as soon as the page loads
-      document.addEventListener('DOMContentLoaded', function() {
-          initializeAdyenCheckout();
-      });
-    </script>
+    <script src="adyenCheckout.js"></script>
 </body>
 </html>
