@@ -45,6 +45,3 @@ async function initializeAdyenCheckout() {
     console.error("Failed to initialize AdyenCheckout:", error);
   }
 }
-
-// Initialize AdyenCheckout after DOM loads
-document.addEventListener("DOMContentLoaded", initializeAdyenCheckout);
