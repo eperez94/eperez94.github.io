@@ -8,7 +8,7 @@
   --adyen-sdk-color-label-critical: #e22d2d; /* Error state color */
 
   /* Background Colors */
-  --adyen-sdk-color-background-primary: #ffffff; /* White background for primary elements */
+  --adyen-sdk-color-background-primary: #1db954; /* Spotify green for primary radio button */
   --adyen-sdk-color-background-secondary: #f7f7f8; /* Light gray for selected elements */
   --adyen-sdk-color-background-inverse-primary-hover: #5c687c; /* Hover state for primary button */
   --adyen-sdk-color-background-always-dark: #1db954; /* Spotify green for primary payment button */
