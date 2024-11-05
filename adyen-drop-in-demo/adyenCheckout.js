@@ -1,6 +1,4 @@
 var checkout = new window.AdyenCheckout({
-  environment: 'test',
-  clientKey: 'test_LN74HPRZCRAX5N2Y25A7GYYU7454VV2F', // Replace with your actual client key
   paymentMethodsResponse: {
     paymentMethods: [
       {
@@ -8,7 +6,7 @@ var checkout = new window.AdyenCheckout({
         type: "paypal"
       },
       {
-        name: "Pay later with Klarna",
+        name: "Pay later with Klarna.",
         type: "klarna"
       },
       {
@@ -19,5 +17,4 @@ var checkout = new window.AdyenCheckout({
   }
 });
 
-// Create and mount the Drop-in component
 checkout.create("dropin").mount("#app");
