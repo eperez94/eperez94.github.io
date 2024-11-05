@@ -7,10 +7,10 @@ const configuration = {
   environment: 'test', // Change to 'live' for the live environment.
   amount: {
     value: 1000,
-    currency: 'EUR'
+    currency: 'USD'
   },
-  locale: 'nl-NL',
-  countryCode: 'NL',
+  locale: 'en-US',
+  countryCode: 'US',
   clientKey: 'test_LN74HPRZCRAX5N2Y25A7GYYU7454VV2F', // Public key used for client-side authentication
   onPaymentCompleted: (result, component) => {
     console.info("Payment completed:", result, component);
