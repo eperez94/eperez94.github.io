@@ -1,26 +1,35 @@
 /* override.css */
 :root {
-  /* Background and Text Colors */
-  --adyen-checkout-background-color: #ffffff; /* White background */
-  --adyen-checkout-text-color: #191414; /* Spotify's black for text */
-  
-  /* Input Field Styling */
-  --adyen-checkout-input-background-color: #f7f7f7; /* Light background for input fields */
-  --adyen-checkout-input-border-color: #191414; /* Black border for inputs */
-  --adyen-checkout-input-wrapper-focus-border-color: #1DB954; /* Spotify green for focused border */
-  --adyen-checkout-input-font-size: 16px; /* Font size for inputs */
-  --adyen-checkout-input-color: #191414; /* Black text inside inputs */
-  
-  /* Button Styling */
-  --adyen-checkout-button-background-color: #1DB954; /* Spotify green for buttons */
-  --adyen-checkout-button-text-color: #ffffff; /* White text on buttons */
-  --adyen-checkout-button-font-size: 16px; /* Button font size */
-  --adyen-checkout-button-border-radius: 4px; /* Slightly rounded button corners */
-  
-  /* Spinner and Icon Colors */
-  --adyen-checkout-spinner-color: #1DB954; /* Spinner color matching Spotify green */
-  --adyen-checkout-icon-color: #191414; /* Black color for icons */
-  
-  /* Font Family */
-  --adyen-checkout-font-family: Arial, Helvetica, sans-serif; /* Simple sans-serif font */
+  /* Text Colors */
+  --adyen-sdk-color-label-primary: #191414; /* Spotify black for primary labels */
+  --adyen-sdk-color-label-secondary: #5c687c; /* Subdued color for secondary labels */
+  --adyen-sdk-color-label-highlight: #1db954; /* Spotify green for link buttons and highlights */
+  --adyen-sdk-color-label-on-color: #ffffff; /* White text on buttons */
+  --adyen-sdk-color-label-critical: #e22d2d; /* Error state color */
+
+  /* Background Colors */
+  --adyen-sdk-color-background-primary: #ffffff; /* White background for primary elements */
+  --adyen-sdk-color-background-secondary: #f7f7f8; /* Light gray for selected elements */
+  --adyen-sdk-color-background-inverse-primary-hover: #5c687c; /* Hover state for primary button */
+  --adyen-sdk-color-background-always-dark: #1db954; /* Spotify green for primary payment button */
+  --adyen-sdk-color-background-disabled: #e3e5e9; /* Disabled elements */
+
+  /* Border Colors */
+  --adyen-sdk-color-outline-primary: #191414; /* Spotify black for input borders */
+  --adyen-sdk-color-outline-primary-active: #1db954; /* Spotify green for focused border */
+  --adyen-sdk-color-outline-critical: #e22d2d; /* Red border for errors */
+
+  /* Button Styles */
+  --adyen-sdk-color-background-always-dark-active: #128a3b; /* Slightly darker green for active button state */
+  --adyen-sdk-color-background-secondary-hover: #128a3b; /* Hover background color for secondary buttons */
+
+  /* Font Sizes and Line Heights */
+  --adyen-sdk-text-caption-font-size: 12px; /* Small text (e.g., instructions, disclaimers) */
+  --adyen-sdk-text-body-font-size: 14px; /* Regular text font size */
+  --adyen-sdk-text-title-font-size: 16px; /* Titles (e.g., form labels) */
+  --adyen-sdk-text-title-l-font-size: 24px; /* Larger text for emphasized elements */
+
+  /* Border Radius */
+  --adyen-sdk-border-radius-s: 4px; /* Rounded edges for input fields and buttons */
+  --adyen-sdk-border-radius-m: 8px; /* Medium rounded corners */
 }
