@@ -1,4 +1,4 @@
-var checkout = new AdyenCheckout({
+var checkout = new window.AdyenCheckout({
   paymentMethodsResponse: {
     paymentMethods: [
       {
