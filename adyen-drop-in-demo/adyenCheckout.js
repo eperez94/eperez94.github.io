@@ -19,7 +19,7 @@ const configuration = {
 
 // Initialize AdyenCheckout and mount Drop-in
 function initializeAdyenCheckout() {
-  const checkout = new AdyenCheckout(configuration);
+  const checkout = new window.AdyenCheckout(configuration);
   checkout.create("dropin").mount("#app");
 }
 
