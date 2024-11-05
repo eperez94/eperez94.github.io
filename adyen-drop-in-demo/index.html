@@ -5,13 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Adyen Checkout Demo</title>
 
+  <!-- Embed Adyen Web stylesheet -->
+  <link rel="stylesheet" 
+        href="https://checkoutshopper-test.cdn.adyen.com/checkoutshopper/sdk/6.5.0/adyen.css">
+
   <!-- Your own stylesheet -->
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- Embed Adyen Web script -->
+  <script src="https://checkoutshopper-test.cdn.adyen.com/checkoutshopper/sdk/6.5.0/adyen.js"></script>
 </head>
 <body>
   <div class="container">
     <h2>Your plan</h2>
-    <!-- Offer Plan Section -->
     <section class="section offer-card">
       <article>
         <h1>Premium Individual</h1>
@@ -23,7 +29,6 @@
       </article>
     </section>
 
-    <!-- Billing Information Section -->
     <div class="section">
       <h3>Billing Information</h3>
       <div class="form-group">
@@ -40,7 +45,6 @@
           <option value="">Select State</option>
           <option value="CA">California</option>
           <option value="NY">New York</option>
-          <!-- Add more states as needed -->
         </select>
       </div>
       <div class="form-group">
@@ -49,17 +53,14 @@
       </div>
     </div>
 
-    <!-- Payment Information Section -->
     <div class="section">
       <h3>Payment Information</h3>
-      <!-- Drop-in Container -->
       <div id="dropin-container"></div>
     </div>
 
-    <!-- Complete Purchase Button -->
     <button>Complete Purchase</button>
 
-    <!-- Custom JavaScript -->
+    <!-- Initialize Adyen Checkout in your own JavaScript file -->
     <script src="adyenCheckout.js"></script>
-</body>
+  </body>
 </html>
