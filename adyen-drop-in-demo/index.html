@@ -12,8 +12,6 @@
   <!-- Your own stylesheet -->
   <link rel="stylesheet" href="styles.css" />
 
-  <!-- Embed Adyen Web script -->
-  <script src="https://checkoutshopper-test.cdn.adyen.com/checkoutshopper/sdk/6.5.0/adyen.js"></script>
 </head>
 <body>
   <div class="container">
@@ -55,12 +53,11 @@
 
     <div class="section">
       <h3>Payment Information</h3>
-      <div id="dropin-container"></div>
+      <div id="app"></div>
+      <!-- Embed Adyen Web script -->
+      <script src="https://checkoutshopper-test.cdn.adyen.com/checkoutshopper/sdk/6.5.0/adyen.js"></script>
+      <!-- Custom JavaScript to initialize Adyen -->
+      <script src="adyenCheckout.js"></script>
     </div>
-
-    <button>Complete Purchase</button>
-
-    <!-- Initialize Adyen Checkout in your own JavaScript file -->
-    <script src="adyenCheckout.js"></script>
   </body>
 </html>
