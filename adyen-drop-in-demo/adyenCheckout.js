@@ -2,6 +2,10 @@ var checkout = new window.AdyenCheckout({
   paymentMethodsResponse: {
     paymentMethods: [
       {
+        name: "Card",
+        type: "scheme"
+      },
+      {
         name: "PayPal",
         type: "paypal"
       },
