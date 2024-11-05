@@ -23,15 +23,36 @@ const configuration = {
   }
 };
 
-// Initialize the payment session, create and mount Drop-in
+// Load Adyen CSS and JavaScript, then initialize checkout
+function loadAdyenDependencies() {
+  // Load the Adyen CSS
+  const link = document.createElement("link");
+  link.rel = "stylesheet";
+  link.href = "https://checkoutshopper-test.cdn.adyen.com/checkoutshopper/sdk/6.5.0/adyen.css";
+  link.integrity = "sha384-uufhzWG2RuRQO7+XOvcalWqc1tuu9jdTMeO5nMwXTHB1p/EJuxTwRfhA3Q8aLEGe";
+  link.crossOrigin = "anonymous";
+  document.head.appendChild(link);
+
+  // Load the Adyen JavaScript
+  const script = document.createElement("script");
+  script.src = "https://checkoutshopper-test.cdn.adyen.com/checkoutshopper/sdk/6.5.0/adyen.js";
+  script.integrity = "sha384-XS7xTa1zeFadKWQceyCI+If+qgqSpiE2z7fnFJyznti1yloAmaxHFUkf3K8/Av0+";
+  script.crossOrigin = "anonymous";
+  script.async = true;
+
+  // Initialize AdyenCheckout once the script has loaded
+  script.onload = initializeAdyenCheckout;
+  document.body.appendChild(script);
+}
+
+// Initialize the payment session, create, and mount Drop-in
 async function initializeAdyenCheckout() {
   try {
     console.log("Initializing AdyenCheckout...");
-    // 1. Create an instance of AdyenCheckout using the configuration object
-    const checkout = await AdyenCheckout(configuration);
+    const checkout = await new window.AdyenCheckout(configuration);
 
-    // 2. Create an instance of Drop-in and mount it to the container you created
-    const dropin = checkout.create('dropin', {
+    // Create and mount the Drop-in component
+    checkout.create("dropin", {
       onReady: () => {
         console.info("Drop-in is ready for use.");
       },
@@ -40,18 +61,21 @@ async function initializeAdyenCheckout() {
       },
       onDisableStoredPaymentMethod: (storedPaymentMethodId, resolve, reject) => {
         console.info("Disabling stored payment method:", storedPaymentMethodId);
-        // Simulate disable response - in a real implementation, make a /disable request to your backend here
-        const success = true; // replace with actual disable response success check
+        // Simulate disable response
+        const success = true;
         if (success) {
-          resolve(); // call resolve if successful
+          resolve();
         } else {
-          reject(); // call reject if unsuccessful
+          reject();
         }
       }
-    }).mount('#dropin-container'); // Mounts Drop-in to the container
+    }).mount("#dropin-container");
 
     console.log("Drop-in component initialized and mounted.");
   } catch (error) {
     console.error("Failed to initialize AdyenCheckout:", error);
   }
 }
+
+// Load Adyen dependencies on page load
+document.addEventListener("DOMContentLoaded", loadAdyenDependencies);
