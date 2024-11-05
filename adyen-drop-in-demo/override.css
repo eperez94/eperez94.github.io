@@ -18,6 +18,7 @@
   --adyen-sdk-color-outline-primary: #191414; /* Spotify black for input borders */
   --adyen-sdk-color-outline-primary-active: #1db954; /* Spotify green for focused border */
   --adyen-sdk-color-outline-critical: #e22d2d; /* Red border for errors */
+  --adyen-sdk-color-outline-secondary: #1db954;
 
   /* Button Styles */
   --adyen-sdk-color-background-always-dark-active: #128a3b; /* Slightly darker green for active button state */
