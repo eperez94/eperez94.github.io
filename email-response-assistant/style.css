@@ -1,0 +1,41 @@
+/* style.css */
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 60%;
+    margin: auto;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+h1 {
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    font-size: 1em;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+#responseSection {
+    margin-top: 20px;
+}
