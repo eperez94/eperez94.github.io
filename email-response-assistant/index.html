@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Response Assistant</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Email Response Assistant</h1>
+        <form id="emailForm">
+            <label for="emailInput">Email Received:</label>
+            <textarea id="emailInput" placeholder="Paste the email you received here" rows="5" required></textarea>
+            
+            <label for="contextInput">Relevant Context:</label>
+            <textarea id="contextInput" placeholder="Provide any relevant context here" rows="3"></textarea>
+            
+            <button type="button" onclick="generateResponse()">Generate Response</button>
+        </form>
+
+        <div id="responseSection" style="display: none;">
+            <h2>Suggested Response:</h2>
+            <textarea id="responseOutput" rows="5" readonly></textarea>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
