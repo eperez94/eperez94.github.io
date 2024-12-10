@@ -12,7 +12,7 @@ document.getElementById('generateResponse').addEventListener('click', async () =
     document.getElementById('responseOutput').value = 'Generating a response...';
 
     // Call the Firebase Function
-    const response = await fetch('https://us-central1-fillmorefinances.cloudfunctions.net/generateReply', {
+    const response = await fetch('https://generatereply-tjxmtwhs4a-uc.a.run.app', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
