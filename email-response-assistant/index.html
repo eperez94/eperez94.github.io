@@ -23,6 +23,15 @@
       border-radius: 5px;
     }
 
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
     button {
       background-color: #007bff;
       color: white;
@@ -44,30 +53,39 @@
 </head>
 <body>
   <h1>Email Response Helper</h1>
-  <p>Paste the email you received in the input box below, and we'll generate a helpful reply for you.</p>
+  <p>Paste the email you received and add any relevant context to generate a helpful reply.</p>
 
+  <!-- Email Input -->
   <label for="emailInput">Input Email:</label>
   <textarea id="emailInput" placeholder="Paste the email you received here..."></textarea>
 
+  <!-- Context Input -->
+  <label for="contextInput">Relevant Context:</label>
+  <input id="contextInput" type="text" placeholder="Add context (e.g., tone, urgency, or specific details)...">
+
   <button id="generateResponse">Generate Reply</button>
 
+  <!-- Output Area -->
   <div class="output-container">
     <label for="responseOutput">Generated Reply:</label>
     <textarea id="responseOutput" placeholder="Your reply will appear here..." readonly></textarea>
   </div>
 
   <script>
-    // Placeholder for functionality we will implement with Firebase
     document.getElementById('generateResponse').addEventListener('click', async () => {
       const emailInput = document.getElementById('emailInput').value;
+      const contextInput = document.getElementById('contextInput').value;
 
       if (!emailInput) {
         alert('Please enter the email you received.');
         return;
       }
 
-      // Placeholder: This will eventually send a request to your Firebase function
-      document.getElementById('responseOutput').value = 'Generating a response... (This will be updated via Firebase)';
+      // Placeholder: Update this to send the data to your Firebase Function
+      document.getElementById('responseOutput').value = 
+        `Generating a response based on your email and context... 
+        (Email: ${emailInput.substring(0, 50)}...) 
+        (Context: ${contextInput || 'None provided'})`;
     });
   </script>
 </body>
