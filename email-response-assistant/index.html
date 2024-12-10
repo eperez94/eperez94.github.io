@@ -1,29 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Email Response Assistant</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Email Response Helper</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      padding: 20px;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    textarea {
+      width: 100%;
+      height: 150px;
+      margin-bottom: 20px;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .output-container {
+      margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Email Response Assistant</h1>
-        <form id="emailForm">
-            <label for="emailInput">Email Received:</label>
-            <textarea id="emailInput" placeholder="Paste the email you received here" rows="5" required></textarea>
-            
-            <label for="contextInput">Relevant Context:</label>
-            <textarea id="contextInput" placeholder="Provide any relevant context here" rows="3"></textarea>
-            
-            <button type="button" onclick="generateResponse()">Generate Response</button>
-        </form>
+  <h1>Email Response Helper</h1>
+  <p>Paste the email you received in the input box below, and we'll generate a helpful reply for you.</p>
 
-        <div id="responseSection" style="display: none;">
-            <h2>Suggested Response:</h2>
-            <textarea id="responseOutput" rows="5" readonly></textarea>
-        </div>
-    </div>
-    <script src="script.js"></script>
+  <label for="emailInput">Input Email:</label>
+  <textarea id="emailInput" placeholder="Paste the email you received here..."></textarea>
+
+  <button id="generateResponse">Generate Reply</button>
+
+  <div class="output-container">
+    <label for="responseOutput">Generated Reply:</label>
+    <textarea id="responseOutput" placeholder="Your reply will appear here..." readonly></textarea>
+  </div>
+
+  <script>
+    // Placeholder for functionality we will implement with Firebase
+    document.getElementById('generateResponse').addEventListener('click', async () => {
+      const emailInput = document.getElementById('emailInput').value;
+
+      if (!emailInput) {
+        alert('Please enter the email you received.');
+        return;
+      }
+
+      // Placeholder: This will eventually send a request to your Firebase function
+      document.getElementById('responseOutput').value = 'Generating a response... (This will be updated via Firebase)';
+    });
+  </script>
 </body>
 </html>
