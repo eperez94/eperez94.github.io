@@ -1,0 +1,560 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hightouch SDK Staging Tester</title>
+    <style>
+      :root {
+        --bg: #0b1220;
+        --panel: #111a2e;
+        --muted: #93a4c7;
+        --text: #e7eeff;
+        --border: #233052;
+        --btn: #1c2a4b;
+        --btn2: #22345f;
+        --danger: #5a1f2a;
+        --ok: #163a2a;
+        --warn: #4a3b12;
+        --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+          monospace;
+        --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji",
+          "Segoe UI Emoji";
+      }
+      body {
+        margin: 0;
+        font-family: var(--sans);
+        background: linear-gradient(180deg, #070b14 0%, var(--bg) 100%);
+        color: var(--text);
+      }
+      .wrap {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 24px;
+      }
+      h1 {
+        font-size: 20px;
+        margin: 0 0 8px;
+      }
+      .sub {
+        color: var(--muted);
+        margin: 0 0 20px;
+        font-size: 14px;
+        line-height: 1.4;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+      @media (max-width: 900px) {
+        .grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .card {
+        background: rgba(17, 26, 46, 0.85);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 16px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+      }
+      .card h2 {
+        margin: 0 0 10px;
+        font-size: 15px;
+      }
+      label {
+        display: block;
+        font-size: 12px;
+        color: var(--muted);
+        margin: 10px 0 6px;
+      }
+      input,
+      textarea,
+      select {
+        width: 100%;
+        box-sizing: border-box;
+        background: #0b1326;
+        color: var(--text);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 10px 10px;
+        font-size: 13px;
+        outline: none;
+      }
+      textarea {
+        min-height: 92px;
+        font-family: var(--mono);
+        line-height: 1.35;
+      }
+      .row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+      .btnrow {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 12px;
+      }
+      button {
+        border: 1px solid var(--border);
+        background: var(--btn);
+        color: var(--text);
+        border-radius: 10px;
+        padding: 10px 12px;
+        cursor: pointer;
+        font-size: 13px;
+      }
+      button:hover {
+        background: var(--btn2);
+      }
+      button.danger {
+        background: var(--danger);
+      }
+      button.danger:hover {
+        filter: brightness(1.1);
+      }
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 12px;
+        padding: 6px 10px;
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        color: var(--muted);
+        background: rgba(11, 19, 38, 0.6);
+      }
+      .statusDot {
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+        background: #6b7280;
+        box-shadow: 0 0 0 2px rgba(107, 114, 128, 0.15);
+      }
+      .statusDot.ok {
+        background: #22c55e;
+        box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.15);
+      }
+      .statusDot.warn {
+        background: #f59e0b;
+        box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.15);
+      }
+      .statusDot.bad {
+        background: #ef4444;
+        box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.15);
+      }
+      .log {
+        margin-top: 16px;
+        background: #050a14;
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 12px;
+        font-family: var(--mono);
+        font-size: 12px;
+        line-height: 1.4;
+        max-height: 340px;
+        overflow: auto;
+        white-space: pre-wrap;
+      }
+      .logline {
+        border-bottom: 1px dashed rgba(35, 48, 82, 0.6);
+        padding: 8px 0;
+      }
+      .logline:last-child {
+        border-bottom: none;
+      }
+      .topbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-bottom: 16px;
+      }
+      .topActions {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+      .note {
+        color: var(--muted);
+        font-size: 12px;
+        margin-top: 8px;
+      }
+      .kbd {
+        font-family: var(--mono);
+        font-size: 12px;
+        border: 1px solid var(--border);
+        border-bottom-width: 2px;
+        padding: 2px 6px;
+        border-radius: 8px;
+        background: rgba(11, 19, 38, 0.6);
+        color: var(--text);
+      }
+    </style>
+
+<script type="text/javascript">
+!function(){var e=window.htevents=window.htevents||[];if(!e.initialize)if(e.invoked)window.console&&console.error&&console.error("Hightouch snippet included twice.");else{e.invoked=!0,e.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on","addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware"],e.factory=function(t){return function(){var n=Array.prototype.slice.call(arguments);return n.unshift(t),e.push(n),e}};for(var t=0;t<e.methods.length;t++){var n=e.methods[t];e[n]=e.factory(n)}e.load=function(t,n){var o=document.createElement("script");o.type="text/javascript",o.async=!0,o.src="https://cdn.hightouch-events.com/browser/release/v1-latest/events.min.js";var r=document.getElementsByTagName("script")[0];r.parentNode.insertBefore(o,r),e._loadOptions=n,e._writeKey=t},e.SNIPPET_VERSION="0.0.1",
+e.load('126b05b8c3ae2d0bf628234339d6c1e4c76c7a014456d131ff376e86d9f45a8e',{apiHost:'us-east-1.hightouch-events.com'}),
+e.page()}}();
+</script>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <div class="topbar">
+        <div>
+          <h1>Hightouch JS SDK Staging Tester</h1>
+          <p class="sub">
+            Use this page to fire <span class="kbd">identify</span>, <span class="kbd">track</span>,
+            <span class="kbd">page</span>, <span class="kbd">group</span>, and <span class="kbd">reset</span>.
+            Watch Network tab for outgoing requests and confirm events appear in your Hightouch environment.
+          </p>
+        </div>
+
+        <div class="topActions">
+          <span class="pill" title="Shows if window.htevents is present">
+            <span id="sdkDot" class="statusDot"></span>
+            <span id="sdkStatus">SDK: not detected</span>
+          </span>
+          <button id="btnCheckSdk" type="button">Re-check SDK</button>
+          <button id="btnClearLog" type="button">Clear log</button>
+        </div>
+      </div>
+
+      <div class="grid">
+        <!-- Identify -->
+        <div class="card">
+          <h2>Identify</h2>
+          <label>User ID (required)</label>
+          <input id="identifyUserId" placeholder="e.g. user_123" value="user_123" />
+
+          <label>Traits (JSON object)</label>
+          <textarea id="identifyTraits" spellcheck="false">
+{
+  "email": "user_123@example.com",
+  "name": "Test User"
+}</textarea
+          >
+
+          <label>Context overrides (JSON object)</label>
+          <textarea id="identifyContext" spellcheck="false">{}</textarea>
+
+          <div class="btnrow">
+            <button id="btnIdentify" type="button">Send identify</button>
+          </div>
+
+          <div class="note">
+            If you call identify multiple times for the same user, traits should merge.
+          </div>
+        </div>
+
+        <!-- Track -->
+        <div class="card">
+          <h2>Track</h2>
+          <label>Event name (required)</label>
+          <input id="trackEvent" placeholder='e.g. "Checked Out"' value="Test Event" />
+
+          <label>Properties (JSON object)</label>
+          <textarea id="trackProps" spellcheck="false">
+{
+  "product_id": "sku_123",
+  "value": 42
+}</textarea
+          >
+
+          <label>Context overrides (JSON object)</label>
+          <textarea id="trackContext" spellcheck="false">{}</textarea>
+
+          <div class="btnrow">
+            <button id="btnTrack" type="button">Send track</button>
+          </div>
+        </div>
+
+        <!-- Page -->
+        <div class="card">
+          <h2>Page</h2>
+          <div class="row">
+            <div>
+              <label>Category (required)</label>
+              <input id="pageCategory" placeholder="e.g. Docs" value="Staging" />
+            </div>
+            <div>
+              <label>Name (required)</label>
+              <input id="pageName" placeholder="e.g. Getting started" value="SDK Tester" />
+            </div>
+          </div>
+
+          <label>Properties (JSON object)</label>
+          <textarea id="pageProps" spellcheck="false">
+{
+  "url": "https://example.github.io/hightouch-sdk-staging/"
+}</textarea
+          >
+
+          <label>Context overrides (JSON object)</label>
+          <textarea id="pageContext" spellcheck="false">{}</textarea>
+
+          <div class="btnrow">
+            <button id="btnPage" type="button">Send page</button>
+          </div>
+
+          <div class="note">
+            The SDK may autocollect page referrer/url; you can override via properties/context.
+          </div>
+        </div>
+
+        <!-- Group + Reset -->
+        <div class="card">
+          <h2>Group + Reset</h2>
+
+          <label>Group ID (required for group)</label>
+          <input id="groupId" placeholder="e.g. org_456" value="org_456" />
+
+          <label>Group traits (JSON object)</label>
+          <textarea id="groupTraits" spellcheck="false">
+{
+  "company_name": "Example Co",
+  "plan": "enterprise"
+}</textarea
+          >
+
+          <label>Context overrides (JSON object)</label>
+          <textarea id="groupContext" spellcheck="false">{}</textarea>
+
+          <div class="btnrow">
+            <button id="btnGroup" type="button">Send group</button>
+            <button id="btnReset" type="button" class="danger">Reset (logout)</button>
+          </div>
+
+          <div class="note">
+            Reset clears anonymousId/userId/groupId/traits for the local session. Use it when “logging out”.
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top: 16px">
+        <h2>Event Log</h2>
+        <div class="note">
+          Tip: open DevTools → Network → filter by “collect”, “event”, “ht”, or your known endpoint. Also check Console
+          for errors.
+        </div>
+        <div id="log" class="log"></div>
+      </div>
+    </div>
+
+    <script>
+      // -----------------------
+      // Utilities
+      // -----------------------
+      const el = (id) => document.getElementById(id);
+
+      function nowIso() {
+        return new Date().toISOString();
+      }
+
+      function logLine(level, title, details) {
+        const line = document.createElement("div");
+        line.className = "logline";
+        const prefix =
+          level === "error" ? "[ERROR]" : level === "warn" ? "[WARN]" : level === "ok" ? "[OK]" : "[INFO]";
+        line.textContent =
+          `${prefix} ${nowIso()}  ${title}\n` + (details ? `${typeof details === "string" ? details : JSON.stringify(details, null, 2)}\n` : "");
+        el("log").prepend(line);
+      }
+
+      function safeParseJson(text, label) {
+        const trimmed = (text || "").trim();
+        if (!trimmed) return {};
+        try {
+          const parsed = JSON.parse(trimmed);
+          if (parsed && typeof parsed === "object" && !Array.isArray(parsed)) return parsed;
+          throw new Error("Must be a JSON object (not an array/primitive).");
+        } catch (e) {
+          logLine("error", `Invalid JSON in ${label}`, `${e.message}\nInput:\n${trimmed}`);
+          return null;
+        }
+      }
+
+      function getSdk() {
+        return window.htevents || null;
+      }
+
+      function updateSdkStatus() {
+        const sdk = getSdk();
+        const dot = el("sdkDot");
+        const status = el("sdkStatus");
+
+        if (sdk && typeof sdk === "object") {
+          dot.className = "statusDot ok";
+          status.textContent = "SDK: detected (window.htevents)";
+          return true;
+        }
+        dot.className = "statusDot bad";
+        status.textContent = "SDK: not detected";
+        return false;
+      }
+
+      function requireSdk() {
+        if (!updateSdkStatus()) {
+          logLine(
+            "error",
+            "SDK not detected",
+            "Expected window.htevents to exist. Add your SDK script tag in the placeholder section in <head>."
+          );
+          return null;
+        }
+        return getSdk();
+      }
+
+      function withCallback(opName) {
+        return function callback(err, res) {
+          if (err) {
+            logLine("error", `${opName} callback error`, err);
+          } else {
+            logLine("ok", `${opName} callback`, res ?? "(no response)");
+          }
+        };
+      }
+
+      // -----------------------
+      // Wire up UI
+      // -----------------------
+      el("btnCheckSdk").addEventListener("click", () => {
+        updateSdkStatus();
+        logLine("info", "Re-checked SDK", updateSdkStatus() ? "Detected window.htevents" : "Not detected");
+      });
+
+      el("btnClearLog").addEventListener("click", () => {
+        el("log").innerHTML = "";
+      });
+
+      el("btnIdentify").addEventListener("click", () => {
+        const sdk = requireSdk();
+        if (!sdk) return;
+
+        const userId = el("identifyUserId").value.trim();
+        if (!userId) {
+          logLine("error", "Identify requires userId", "Please provide a userId.");
+          return;
+        }
+
+        const traits = safeParseJson(el("identifyTraits").value, "Identify traits");
+        if (traits === null) return;
+
+        const context = safeParseJson(el("identifyContext").value, "Identify context");
+        if (context === null) return;
+
+        const payloadPreview = { userId, traits, context };
+        logLine("info", "Calling htevents.identify(userId, traits, context)", payloadPreview);
+
+        try {
+          sdk.identify(userId, traits, context, withCallback("identify"));
+        } catch (e) {
+          logLine("error", "identify threw an exception", e?.stack || String(e));
+        }
+      });
+
+      el("btnTrack").addEventListener("click", () => {
+        const sdk = requireSdk();
+        if (!sdk) return;
+
+        const event = el("trackEvent").value.trim();
+        if (!event) {
+          logLine("error", "Track requires event name", "Please provide an event name.");
+          return;
+        }
+
+        const properties = safeParseJson(el("trackProps").value, "Track properties");
+        if (properties === null) return;
+
+        const context = safeParseJson(el("trackContext").value, "Track context");
+        if (context === null) return;
+
+        const payloadPreview = { event, properties, context };
+        logLine("info", "Calling htevents.track(event, properties, context)", payloadPreview);
+
+        try {
+          sdk.track(event, properties, context, withCallback("track"));
+        } catch (e) {
+          logLine("error", "track threw an exception", e?.stack || String(e));
+        }
+      });
+
+      el("btnPage").addEventListener("click", () => {
+        const sdk = requireSdk();
+        if (!sdk) return;
+
+        const category = el("pageCategory").value.trim();
+        const name = el("pageName").value.trim();
+        if (!category || !name) {
+          logLine("error", "Page requires category and name", "Please provide both category and name.");
+          return;
+        }
+
+        const properties = safeParseJson(el("pageProps").value, "Page properties");
+        if (properties === null) return;
+
+        const context = safeParseJson(el("pageContext").value, "Page context");
+        if (context === null) return;
+
+        const payloadPreview = { category, name, properties, context };
+        logLine("info", "Calling htevents.page(category, name, properties, context)", payloadPreview);
+
+        try {
+          sdk.page(category, name, properties, context, withCallback("page"));
+        } catch (e) {
+          logLine("error", "page threw an exception", e?.stack || String(e));
+        }
+      });
+
+      el("btnGroup").addEventListener("click", () => {
+        const sdk = requireSdk();
+        if (!sdk) return;
+
+        const groupId = el("groupId").value.trim();
+        if (!groupId) {
+          logLine("error", "Group requires groupId", "Please provide a groupId.");
+          return;
+        }
+
+        const traits = safeParseJson(el("groupTraits").value, "Group traits");
+        if (traits === null) return;
+
+        const context = safeParseJson(el("groupContext").value, "Group context");
+        if (context === null) return;
+
+        const payloadPreview = { groupId, traits, context };
+        logLine("info", "Calling htevents.group(groupId, traits, context)", payloadPreview);
+
+        try {
+          sdk.group(groupId, traits, context, withCallback("group"));
+        } catch (e) {
+          logLine("error", "group threw an exception", e?.stack || String(e));
+        }
+      });
+
+      el("btnReset").addEventListener("click", () => {
+        const sdk = requireSdk();
+        if (!sdk) return;
+
+        logLine("warn", "Calling htevents.reset()", "Resetting local session identifiers/traits.");
+
+        try {
+          sdk.reset();
+          logLine("ok", "reset completed", "If you identify again, it should be treated as a new session/user unless you reuse userId.");
+        } catch (e) {
+          logLine("error", "reset threw an exception", e?.stack || String(e));
+        }
+      });
+
+      // Initial check
+      updateSdkStatus();
+      logLine("info", "Page loaded", "Add your SDK script tag in <head>, then click Re-check SDK.");
+    </script>
+  </body>
+</html>
