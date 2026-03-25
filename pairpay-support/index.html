@@ -1,61 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>PairPay Support</title>
-  <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-                   Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 0 16px;
-      line-height: 1.6;
-    }
-    h1 {
-      font-size: 2em;
-      margin-bottom: 0.4em;
-    }
-    h2 {
-      margin-top: 1.5em;
-      font-size: 1.4em;
-    }
-    ul {
-      padding-left: 1em;
-    }
-    li {
-      margin-bottom: 1em;
-    }
-    a {
-      color: #007aff;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PairPay — Support</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>PairPay Support</h1>
-  <p>Thanks for using PairPay! If you need help, have questions, or want to report a bug, contact us at:</p>
-  <p><a href="mailto:pairpayapp@gmail.com">pairpayapp@gmail.com</a></p>
+  <div class="page">
 
-  <h2>Common Questions</h2>
-  <ul>
-    <li><strong>How do I add an expense?</strong><br>
-        Tap “Add Expense,” choose a category, enter the amount, who paid, and how it should be split. Save it and you're done.
-    </li>
-    <li><strong>How do I settle up?</strong><br>
-        Go to the summary screen and tap “Settle Up” to log a payment and reset your shared balance.
-    </li>
-    <li><strong>Can I edit or delete expenses?</strong><br>
-        Yes! Tap any expense in the list to edit or delete it.
-    </li>
-  </ul>
+    <!-- Header -->
+    <header class="header">
+      <div class="logo-mark">
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8 12C8 9.79 9.79 8 12 8H14V18H12C9.79 18 8 16.21 8 14V12Z" fill="rgba(255,255,255,0.9)"/>
+          <path d="M18 14C18 16.21 19.79 18 22 18H24V8H22C19.79 8 18 9.79 18 12V14Z" fill="rgba(255,255,255,0.5)"/>
+          <rect x="6" y="20" width="20" height="3" rx="1.5" fill="rgba(255,255,255,0.7)"/>
+          <rect x="10" y="25" width="12" height="2" rx="1" fill="rgba(255,255,255,0.35)"/>
+        </svg>
+      </div>
+      <h1>PairPay Support</h1>
+      <p class="subtitle">Help &amp; frequently asked questions</p>
+    </header>
 
-  <p>If you're experiencing issues or have feature suggestions, feel free to reach out. We’re an indie team and really value your feedback!</p>
+    <!-- Contact -->
+    <div class="contact-card">
+      <p>Have a question, found a bug, or want to suggest a feature?<br>We'd love to hear from you.</p>
+      <a href="mailto:pairpayteam@gmail.com" class="email-link">
+        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="4" width="16" height="12" rx="2"/>
+          <path d="M2 4l8 6 8-6"/>
+        </svg>
+        pairpayteam@gmail.com
+      </a>
+    </div>
 
-  <p><em>Last updated: May 2025</em></p>
+    <!-- FAQ -->
+    <div class="section">
+      <p class="section-label">Common Questions</p>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-question">
+            How do I add an expense?
+            <svg class="faq-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 7l5 5 5-5"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>Tap "Add Expense," pick a category, enter the amount, select who paid, and choose how it should be split. Hit save and you're all set.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            How do I settle up?
+            <svg class="faq-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 7l5 5 5-5"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>Head to the summary screen and tap "Settle Up" to log a payment and reset your shared balance.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Can I edit or delete an expense?
+            <svg class="faq-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 7l5 5 5-5"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>Yes! Tap any expense in the list to edit its details or delete it entirely.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Is my financial data secure?
+            <svg class="faq-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 7l5 5 5-5"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>PairPay stores data securely using Firebase with authentication. Your expense data is only visible to you and your linked partner.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>
+        PairPay is built by an indie developer.<br>
+        Your feedback means everything — thank you for your support.<br><br>
+        Last updated: March 2026
+      </p>
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
