@@ -3,48 +3,148 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PairPay – Track Shared Expenses</title>
-  <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 0 16px;
-      line-height: 1.6;
-    }
-    h1 {
-      font-size: 2em;
-      margin-bottom: 0.3em;
-    }
-    h2 {
-      font-size: 1.3em;
-      margin-top: 1.4em;
-    }
-    a {
-      color: #007aff;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-  </style>
+  <title>PairPay — Split expenses as a couple, your way</title>
+  <meta name="description" content="PairPay is the easiest way for couples to track and split shared expenses — especially when you don't always split things 50/50.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="home-styles.css">
 </head>
 <body>
-  <h1>PairPay</h1>
-  <p><strong>PairPay</strong> is the easiest way for couples to track and split shared expenses — especially when you don’t always split things 50/50.</p>
 
-  <h2>What you can do with PairPay:</h2>
-  <ul>
-    <li>Track who paid and who owes</li>
-    <li>Split expenses by percentages or fractions</li>
-    <li>See monthly summaries and category breakdowns</li>
-    <li>Settle balances anytime</li>
-    <li>Get AI-powered insights on spending (coming soon)</li>
-  </ul>
+  <!-- Nav -->
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="#" class="nav-brand">
+        <div class="nav-logo">
+          <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 12C8 9.79 9.79 8 12 8H14V18H12C9.79 18 8 16.21 8 14V12Z" fill="rgba(255,255,255,0.9)"/>
+            <path d="M18 14C18 16.21 19.79 18 22 18H24V8H22C19.79 8 18 9.79 18 12V14Z" fill="rgba(255,255,255,0.5)"/>
+            <rect x="6" y="20" width="20" height="3" rx="1.5" fill="rgba(255,255,255,0.7)"/>
+            <rect x="10" y="25" width="12" height="2" rx="1" fill="rgba(255,255,255,0.35)"/>
+          </svg>
+        </div>
+        <span class="nav-wordmark">PairPay</span>
+      </a>
+      <a href="mailto:pairpayteam@gmail.com" class="nav-contact">Contact</a>
+    </div>
+  </nav>
 
-  <p>Built for couples. No spreadsheets. No stress.</p>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-bg">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+    </div>
+    <div class="container">
+      <div class="hero-badge animate delay-1">
+        <span class="hero-badge-dot"></span>
+        Now on the App Store
+      </div>
+      <h1 class="animate delay-2">Split expenses as a couple, <em>your way</em></h1>
+      <p class="hero-sub animate delay-3">The easiest way for couples to track and split shared expenses — especially when you don't always split things 50/50.</p>
+      <a href="#" class="hero-cta animate delay-4">
+        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
+        </svg>
+        Download on the App Store
+      </a>
+      <p class="hero-note animate delay-5">Free to download · No account required to explore</p>
+    </div>
+  </section>
 
-  <p><a href="https://apps.apple.com/">Download on the App Store</a> – Coming Soon!</p>
-  <p><a href="mailto:pairpayapp@gmail.com">Contact us</a></p>
+  <!-- Features -->
+  <section class="features">
+    <div class="container">
+      <div class="section-header scroll-reveal">
+        <p class="section-tag">What you can do</p>
+        <h2 class="section-title">Everything couples need, nothing they don't</h2>
+      </div>
+      <div class="feature-grid">
+
+        <div class="feature-card scroll-reveal delay-1">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <h3>Track who paid &amp; who owes</h3>
+          <p>Log every shared expense in seconds. Always know exactly where you stand — no mental math required.</p>
+        </div>
+
+        <div class="feature-card scroll-reveal delay-2">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="1" x2="12" y2="23"/>
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+            </svg>
+          </div>
+          <h3>Split it your way</h3>
+          <p>50/50, 70/30, custom percentages — split each expense however makes sense for your relationship.</p>
+        </div>
+
+        <div class="feature-card scroll-reveal delay-3">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2"/>
+              <path d="M3 9h18"/>
+              <path d="M9 21V9"/>
+            </svg>
+          </div>
+          <h3>Monthly summaries</h3>
+          <p>See spending breakdowns by month and category. Understand where the money goes at a glance.</p>
+        </div>
+
+        <div class="feature-card scroll-reveal delay-4">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+          </div>
+          <h3>Settle up anytime</h3>
+          <p>One tap to log a payment and reset your shared balance. Clean slate whenever you're ready.</p>
+        </div>
+
+        <div class="feature-card coming-soon scroll-reveal delay-5">
+          <span class="coming-soon-badge">Coming Soon</span>
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2a4 4 0 0 1 4 4c0 1.95-1.4 3.58-3.25 3.93"/>
+              <path d="M12 2a4 4 0 0 0-4 4c0 1.95 1.4 3.58 3.25 3.93"/>
+              <path d="M12 18v-8"/>
+              <path d="M8 22h8"/>
+              <path d="M7 12h10"/>
+            </svg>
+          </div>
+          <h3>AI-powered spending insights</h3>
+          <p>Get smart observations about your spending patterns and suggestions to save more together.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Tagline -->
+  <section class="tagline scroll-reveal">
+    <div class="container">
+      <p class="tagline-text"><strong>Built for couples.</strong> No spreadsheets. No stress.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-links">
+        <a href="https://eperez94.github.io/pairpay-support/">Support</a>
+        <a href="mailto:pairpayteam@gmail.com">Contact</a>
+      </div>
+      <p class="footer-copy">&copy; 2026 PairPay. Built with care by an indie developer.</p>
+    </div>
+  </footer>
+
+  <script src="home-script.js"></script>
 </body>
 </html>
