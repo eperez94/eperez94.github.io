@@ -1,0 +1,241 @@
+:root {
+  --bg: #FAFAF8;
+  --surface: #FFFFFF;
+  --text-primary: #1A1A1A;
+  --text-secondary: #5C5C5C;
+  --text-muted: #8A8A8A;
+  --accent: #2E7D6B;
+  --accent-light: #E8F5F0;
+  --accent-dark: #1B5E4B;
+  --border: #E8E8E4;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'DM Sans', -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text-primary);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+/* Header */
+.header {
+  margin-bottom: 48px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid var(--border);
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--accent);
+  text-decoration: none;
+  margin-bottom: 28px;
+  transition: opacity 0.2s ease;
+}
+
+.back-link:hover { opacity: 0.7; }
+
+.back-link svg {
+  width: 16px;
+  height: 16px;
+}
+
+.header h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  margin-bottom: 6px;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* Callout box */
+.callout {
+  background: var(--accent-light);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 10px 10px 0;
+  padding: 20px 24px;
+  margin-top: 16px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+.callout strong {
+  color: var(--accent-dark);
+  display: block;
+  margin-bottom: 4px;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* Sections */
+.section {
+  margin-bottom: 36px;
+}
+
+.section h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  margin-bottom: 12px;
+  color: var(--text-primary);
+}
+
+.section h3 {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent);
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.section p {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+  line-height: 1.7;
+}
+
+.section p:last-child {
+  margin-bottom: 0;
+}
+
+.section a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.15s ease;
+}
+
+.section a:hover {
+  color: var(--accent-dark);
+  text-decoration: underline;
+}
+
+.section code {
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  font-size: 0.82em;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 2px 7px;
+  border-radius: 5px;
+  color: var(--accent-dark);
+}
+
+/* Lists */
+.section ul {
+  margin: 12px 0;
+  padding-left: 20px;
+}
+
+.section ul li {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+.section ul li:last-child {
+  margin-bottom: 0;
+}
+
+.section ul li strong {
+  color: var(--text-primary);
+}
+
+/* "We do not collect" list */
+.no-collect-list {
+  list-style: none;
+  padding-left: 0 !important;
+}
+
+.no-collect-list li {
+  position: relative;
+  padding-left: 24px;
+}
+
+.no-collect-list li::before {
+  content: '✕';
+  position: absolute;
+  left: 0;
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+  top: 2px;
+}
+
+/* Service list (third-party) */
+.service-list {
+  list-style: none;
+  padding-left: 0 !important;
+}
+
+.service-list li {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.service-list li:last-child {
+  margin-bottom: 0;
+}
+
+.service-list li strong {
+  color: var(--text-primary);
+  font-weight: 600;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.service-list li a {
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+/* Footer */
+.footer {
+  margin-top: 56px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+.footer p {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .page { padding: 32px 18px 60px; }
+  .header h1 { font-size: 1.65rem; }
+  .section h2 { font-size: 1.15rem; }
+  .callout { padding: 16px 18px; }
+  .service-list li { padding: 14px 16px; }
+}
