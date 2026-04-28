@@ -44,6 +44,7 @@
 
       <h3>Information collected automatically</h3>
       <ul>
+        <li><strong>Device token</strong> — used to deliver push notifications via Firebase Cloud Messaging when your partner logs an expense or settles up</li>
         <li><strong>Crash reports</strong> — collected automatically by Firebase Crashlytics to help diagnose and fix app issues</li>
         <li><strong>Basic device info</strong> — operating system version, device type, and IP address, collected as part of Firebase services</li>
       </ul>
@@ -64,6 +65,7 @@
       <ul>
         <li>To create and authenticate your account</li>
         <li>To store and sync shared expenses between you and your partner</li>
+        <li>To send push notifications when your partner logs an expense or settles up</li>
         <li>To monitor app stability and fix crashes</li>
       </ul>
       <p>We do not use your data for advertising, behavioral profiling, marketing, or any purpose beyond making PairPay work as intended.</p>
@@ -82,6 +84,11 @@
         <li>
           <strong>Firebase Realtime Database</strong>
           Stores your expense data, partner connections, and account details in the cloud so they sync between you and your partner.
+          <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+        </li>
+        <li>
+          <strong>Firebase Cloud Messaging</strong>
+          Delivers push notifications to your device when your partner logs an expense or settles up. Requires a device token, which is stored solely for notification delivery.
           <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
         </li>
         <li>
