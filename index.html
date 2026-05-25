@@ -3,80 +3,95 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-  <title>Eduardo Perez's Personal Website</title>
-  
-  <!-- External CSS -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Eduardo Perez</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-  <!-- Main Header Section -->
-  <header class="main-header">
-    <h1>Welcome to My Personal Website</h1>
-    <p>Showcasing my projects, portfolio, and professional journey.</p>
+  <header id="site-header">
+    <span class="header-name">Eduardo Perez</span>
+    <nav class="header-links">
+      <a href="https://www.linkedin.com/in/eperez94/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/eperez94" target="_blank" rel="noopener">GitHub</a>
+    </nav>
   </header>
 
-  <!-- Introduction Section -->
-  <section id="intro" class="intro-section">
-    <h2>Eduardo Perez</h2>
-    <p>
-      A Solutions Engineer with a background in apps. Ventured into the advertising world, focused on data-driven
-      solutions and measurement.
-    </p>
-    <a href="#general-info" class="button icon solid solo fa-arrow-down">Continue</a>
-  </section>
+  <main>
+    <section id="hero">
+      <h1>Eduardo Perez</h1>
+      <p class="hero-title">Implementation Manager &middot; iOS Developer</p>
+      <p class="hero-location">San Diego, CA</p>
+    </section>
 
-  <!-- General Information Section -->
-  <section id="general-info" class="general-info-section">
-    <h2>General Information</h2>
-    <div class="grid">
-      <div class="grid-row">
-        <span class="bold">🤵 Name:</span>
-        <span>Eduardo Perez</span>
-      </div>
-      <div class="grid-row">
-        <span class="bold">🎂 Birthdate:</span>
-        <span>December 24</span>
-      </div>
-      <div class="grid-row">
-        <span class="bold">⚒️ Current Role:</span>
-        <span>Technical Account Manager at Branch.io</span>
-      </div>
-      <div class="grid-row">
-        <span class="bold">🏫 Preparing:</span>
-        <span>My first app for the App Store</span>
-      </div>
-    </div>
-  </section>
+    <section id="about">
+      <h2>About</h2>
+      <p>
+        Chemical engineer by training. I grew up in Chicago, studied at Stanford, and spent 8 years in San Francisco
+        working across mobile measurement and ad tech. My stops along the way: AppsFlyer, Facebook Audience Network,
+        Branch.io, and now Hightouch, where I work as an implementation manager.
+      </p>
+      <p>
+        I've spent my career close to how apps are built, instrumented, and measured. Now I'm using that knowledge to
+        build iOS apps that solve problems my fiancée and I actually run into.
+      </p>
+      <p>
+        More on my professional background on <a href="https://www.linkedin.com/in/eperez94/" target="_blank" rel="noopener">LinkedIn</a>.
+      </p>
+    </section>
 
-  <!-- Footer Section -->
-  <footer class="main-footer">
-    <p>Last updated: 09 September 2024</p>
+    <section id="projects">
+      <h2>Projects</h2>
+
+      <div class="project-card">
+        <div class="project-header">
+          <h3>PairPay</h3>
+          <a href="https://apps.apple.com/us/app/pairpay/id6761149047" class="badge badge-live" target="_blank" rel="noopener">Live on the App Store</a>
+        </div>
+        <p class="project-tagline">Couples expense-sharing for partners with separate bank accounts.</p>
+        <p>
+          Real-time proportional splitting, balance tracking, Settle Up, and category analytics.
+          Built with Swift, UIKit, and Firebase.
+        </p>
+        <div class="project-links">
+          <a href="https://eperez94.github.io/pairpay-home" target="_blank" rel="noopener">Marketing site</a>
+          <a href="https://eperez94.github.io/pairpay-support" target="_blank" rel="noopener">Support</a>
+          <a href="https://eperez94.github.io/pairpay-privacy-policy" target="_blank" rel="noopener">Privacy</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <h3>PairPot</h3>
+          <span class="badge badge-pending">Coming to the App Store</span>
+        </div>
+        <p class="project-tagline">Couples expense tracking for partners who share a joint account but pay with individual cards.</p>
+        <p>
+          You and your partner share a joint account for shared expenses. But you each pay with your own cards.
+          Keeping track of what to withdraw and from which card is where things fall apart.
+          Real-time balance tracking and category analytics. Built with Swift, UIKit, and Firebase.
+        </p>
+        <div class="project-links">
+          <a href="https://eperez94.github.io/pairpot/pairpot-home" target="_blank" rel="noopener">Marketing site</a>
+          <a href="https://eperez94.github.io/pairpot/pairpot-support" target="_blank" rel="noopener">Support</a>
+          <a href="https://eperez94.github.io/pairpot/pairpot-privacy-policy" target="_blank" rel="noopener">Privacy</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="connect">
+      <h2>Connect</h2>
+      <p><a href="https://www.linkedin.com/in/eperez94/" target="_blank" rel="noopener">linkedin.com/in/eperez94</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Last updated: May 25, 2026</p>
   </footer>
 
-  <!-- Navigation Toggle Button -->
-  <button id="navToggle" aria-label="Toggle Navigation" class="nav-toggle">☰</button>
-
-  <!-- Navigation Panel -->
-  <nav id="navPanel" class="nav-panel">
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="education.html">Education</a></li>
-      <li><a href="certifications.html">Certifications</a></li>
-      <li><a href="resume.html">Resume</a></li>
-      <li><a href="contact.html">Contact Me</a></li>
-    </ul>
-    <ul class="social-icons">
-      <li><a href="https://www.linkedin.com/in/eperez94/" class="icon fa-linkedin" aria-label="LinkedIn"></a></li>
-    </ul>
-  </nav>
-
-  <!-- Overlay (For Nav Panel) -->
-  <div id="overlay" class="overlay"></div>
-
-  <!-- External JavaScript -->
   <script src="script.js"></script>
 </body>
 
