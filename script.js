@@ -1,16 +1,12 @@
-// Get the nav panel and toggle button
-const navPanel = document.getElementById('navPanel');
-const navToggle = document.getElementById('navToggle');
-const overlay = document.getElementById('overlay');
+const header = document.getElementById('site-header');
+let lastScrollY = window.scrollY;
 
-// Add event listener to toggle the nav panel
-navToggle.addEventListener('click', () => {
-  navPanel.classList.toggle('active'); // Toggle the 'active' class to show/hide the panel
-  overlay.classList.toggle('active');  // Toggle overlay
-});
-
-// Hide nav panel when the overlay is clicked
-overlay.addEventListener('click', () => {
-  navPanel.classList.remove('active');
-  overlay.classList.remove('active');
+window.addEventListener('scroll', () => {
+  const currentScrollY = window.scrollY;
+  if (currentScrollY > lastScrollY && currentScrollY > 80) {
+    header.classList.add('hidden');
+  } else {
+    header.classList.remove('hidden');
+  }
+  lastScrollY = currentScrollY;
 });
