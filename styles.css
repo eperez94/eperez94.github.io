@@ -169,6 +169,20 @@ a:hover {
   cursor: default;
 }
 
+.project-title-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.app-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 9px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
 .project-tagline {
   font-weight: 500;
   color: #111827;
